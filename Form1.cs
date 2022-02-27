@@ -46,14 +46,17 @@ namespace OsuMapExtractor
             new Thread(() =>
             {
                 fi = dir.GetDirectories();
-                for (int i = 0; i < ((textBox1.Text.ToLower() == "max") ?
-                fi.Length : (textBox1.Text == "" || textBox1.Text == " ") ?
-                1 : Convert.ToInt32(textBox1.Text)); i++)
+                for (int i = 0; i < ((textBox1.Text == "" || textBox1.Text == " " || 
+                textBox1.Text == "max") ? fi.Length :
+                Convert.ToInt32(textBox1.Text)); i++)
                 {
                     zipfilefolder = $"{OutputBoxFolder.Text}/{fi[i].Name}.osz";
                     if (SearchBox.Text != "")
                     {
-                        if (fi[i].Name.ToLower().Contains($"{SearchBox.Text.ToLower()}"))
+                        if (SearchBox.Text.Contains("*")) {
+                            SearchBox.Text.Replace("*","_");
+                        }
+                        if (fi[i].Name.ToLower().Contains(SearchBox.Text.ToLower()))
                         {
                             containsNotNull = true;
                             try

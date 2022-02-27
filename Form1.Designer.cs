@@ -137,9 +137,9 @@ namespace OsuMapExtractor
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(41, 97);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(147, 13);
+            this.label4.Size = new System.Drawing.Size(78, 13);
             this.label4.TabIndex = 9;
-            this.label4.Text = "max - all maps    none - 1 map";
+            this.label4.Text = "none - all maps\r\n";
             // 
             // label5
             // 
